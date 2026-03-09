@@ -1,10 +1,10 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
 // Import translation files
-import enCommon from './locales/en/common.json';
-import esCommon from './locales/es/common.json';
+import enCommon from "./locales/en/common.json";
+import esCommon from "./locales/es/common.json";
 
 // Define resources
 const resources = {
@@ -22,21 +22,21 @@ i18n
     resources,
 
     // Default language
-    fallbackLng: 'en',
+    fallbackLng: "en",
 
     // Default namespace
-    defaultNS: 'common',
+    defaultNS: "common",
 
     // Language detection options
     detection: {
       // Order of language detection methods
-      order: ['localStorage', 'navigator', 'htmlTag'],
+      order: ["localStorage", "navigator", "htmlTag"],
 
       // Cache user language on
-      caches: ['localStorage'],
+      caches: ["localStorage"],
 
       // Keys or params to lookup language from
-      lookupLocalStorage: 'i18nextLng',
+      lookupLocalStorage: "i18nextLng",
     },
 
     interpolation: {
@@ -48,10 +48,10 @@ i18n
     debug: false, // Set to false to reduce console warnings
 
     // Namespace separator
-    nsSeparator: ':',
+    nsSeparator: ":",
 
     // Key separator
-    keySeparator: '.',
+    keySeparator: ".",
 
     // Additional options to reduce warnings
     saveMissing: false,

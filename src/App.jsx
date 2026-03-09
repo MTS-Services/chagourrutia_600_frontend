@@ -7,8 +7,6 @@ import HomePage from "@/pages/home-page";
 import AuthPage from "@/pages/auth-page";
 import SubscriptionSuccess from "@/pages/subscription-success";
 import SubscriptionCancel from "@/pages/subscription-cancel";
-import ResetPasswordPage from "@/pages/reset-password";
-import { ProtectedRoute } from "./lib/protected-route";
 import GuidePage from "@/pages/guide";
 import { AuthProvider, useAuth } from "@/hooks/use-auth";
 // No global full-screen loader — pages handle their own loading states
