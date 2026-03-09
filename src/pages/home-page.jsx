@@ -129,9 +129,9 @@ export default function HomePage() {
   // Handle Add or Upgrade button click
   const handleAddOrUpgrade = () => {
     if (isAtFreeLimit) {
-      const returnUrl = `${window.location.origin}/subscription/success`;
+      const successUrl = `${window.location.origin}/subscription/success`;
       const cancelUrl = `${window.location.origin}/subscription/cancel`;
-      upgradeMutation.mutate({ returnUrl, cancelUrl });
+      upgradeMutation.mutate({ successUrl, cancelUrl });
     } else {
       setEditingTimezone(null);
       setAddDialogOpen(true);

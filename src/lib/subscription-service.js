@@ -46,9 +46,12 @@ export const subscriptionService = {
   },
 
   // Initiate upgrade flow (returns redirect URL or subscription data)
-  async upgrade({ returnUrl, cancelUrl, token }) {
+  async upgrade({ successUrl, cancelUrl, priceId, token }) {
     try {
-      const payload = { returnUrl, cancelUrl };
+      const payload = { successUrl, cancelUrl };
+      if (priceId) {
+        payload.priceId = priceId;
+      }
       console.log("Calling upgrade endpoint with:", {
         payload,
         token: token ? "present" : "missing",

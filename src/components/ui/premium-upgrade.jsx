@@ -9,12 +9,12 @@ export function PremiumUpgrade({ timezoneCount }) {
 
   const handleUpgrade = () => {
     // Use proper return URLs for success and cancel
-    const returnUrl = `${window.location.origin}/subscription/success`;
+    const successUrl = `${window.location.origin}/subscription/success`;
     const cancelUrl = `${window.location.origin}/subscription/cancel`;
 
-    console.log("Upgrade URLs:", { returnUrl, cancelUrl });
+    console.log("Upgrade URLs:", { successUrl, cancelUrl });
 
-    upgradeMutation.mutate({ returnUrl, cancelUrl });
+    upgradeMutation.mutate({ successUrl, cancelUrl });
   };
 
   // Get max timezone count from subscription status or default to 3

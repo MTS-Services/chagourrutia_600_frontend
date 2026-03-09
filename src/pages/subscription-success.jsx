@@ -39,14 +39,7 @@ export default function SubscriptionSuccess() {
         }
 
         // Call the subscription fix endpoint
-        const returnUrl = `${window.location.origin}/subscription/success`;
-        const cancelUrl = `${window.location.origin}/subscription/cancel`;
-
-        const response = await subscriptionService.fixUpgrade(
-          token,
-          returnUrl,
-          cancelUrl,
-        );
+        const response = await subscriptionService.fixUpgrade(token);
 
         if (response?.success) {
           setFixComplete(true);

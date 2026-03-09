@@ -262,13 +262,14 @@ export function AuthProvider({ children }) {
 
   const upgradeMutation = {
     mutate: async (opts = {}) => {
-      // opts can include returnUrl/cancelUrl for payment gateway
+      // opts can include successUrl/cancelUrl/priceId for payment gateway
       try {
         const token = localStorage.getItem(TOKEN_KEY);
         const currentUrl = window.location.origin;
         const response = await subscriptionService.upgrade({
-          returnUrl: opts.returnUrl || `${currentUrl}/subscription/success`,
+          successUrl: opts.successUrl || `${currentUrl}/subscription/success`,
           cancelUrl: opts.cancelUrl || `${currentUrl}/subscription/cancel`,
+          priceId: opts.priceId,
           token,
         });
 
